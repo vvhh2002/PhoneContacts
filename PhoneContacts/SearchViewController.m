@@ -19,7 +19,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
-    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.google.com"]]];
+//    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.google.com"]]];
+    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://m.baidu.com/?pu=sz%401321_000"]]];
     [self.view addSubview:webView];
 }
 
