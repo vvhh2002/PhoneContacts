@@ -9,8 +9,8 @@
 #import "SearchViewController.h"
 #import <WebKit/WebKit.h>
 
-@interface SearchViewController ()<UIWebViewDelegate,WKNavigationDelegate>
-@property(assign,nonatomic)UIWebView *webView;
+@interface SearchViewController ()<WKNavigationDelegate,WKUIDelegate>
+@property (nonatomic,strong) WKWebView *webView;
 @end
 
 @implementation SearchViewController
@@ -22,7 +22,6 @@
     [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.baidu.com"]]];
     [self.view addSubview:webView];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
