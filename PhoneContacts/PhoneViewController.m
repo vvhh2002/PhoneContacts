@@ -1,18 +1,18 @@
 //
-//  SecondViewController.m
+//  PhoneViewController.m
 //  PhoneContacts
 //
 //  Created by - on 6/9/18.
 //  Copyright © 2018 liyihan. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "PhoneViewController.h"
 
-@interface SecondViewController ()
+@interface PhoneViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation PhoneViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

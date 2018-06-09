@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  PhoneViewController.h
 //  PhoneContacts
 //
 //  Created by - on 6/9/18.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface PhoneViewController : UIViewController
 
 
 @end

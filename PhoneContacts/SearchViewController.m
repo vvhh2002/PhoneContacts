@@ -1,18 +1,18 @@
 //
-//  FirstViewController.m
+//  SearchViewController.m
 //  PhoneContacts
 //
 //  Created by - on 6/9/18.
 //  Copyright © 2018 liyihan. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "SearchViewController.h"
 
-@interface FirstViewController ()
+@interface SearchViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation SearchViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
