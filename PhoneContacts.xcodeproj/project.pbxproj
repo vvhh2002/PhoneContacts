@@ -59,8 +59,8 @@
 			children = (
 				5D83708F20CB8896000B0682 /* NavigationController.h */,
 				5D83708E20CB8896000B0682 /* NavigationController.m */,
-				5D83709020CB8896000B0682 /* TabBarController.h */,
 				5D83708D20CB8896000B0682 /* TabBarController.m */,
+				5D83709020CB8896000B0682 /* TabBarController.h */,
 			);
 			path = BaseViewControllers;
 			sourceTree = "<group>";

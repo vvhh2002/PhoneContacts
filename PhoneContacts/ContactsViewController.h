@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ContactsViewController : UIViewController
+@interface ContactsViewController : UIViewController<UITableViewDelegate>
 
+{
+    UITableView *tableview;
+    NSArray *array; //创建个数组来放我们的数据
+}
+@property (strong,nonatomic)UITableView *tableview;
+
+@property (strong,nonatomic)NSArray *array;
 
 @end
 
