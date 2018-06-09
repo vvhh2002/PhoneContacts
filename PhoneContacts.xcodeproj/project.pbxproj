@@ -99,8 +99,8 @@
 				5DB5F1E920CAE6D20027B6DE /* PhoneViewController.m */,
 				5D81838420CB7A760025057B /* SearchViewController.h */,
 				5D81838220CB7A5F0025057B /* SearchViewController.m */,
-				5D83708A20CB884F000B0682 /* LaunchScreen.storyboard */,
 				5D83708920CB884F000B0682 /* Main.storyboard */,
+				5D83708A20CB884F000B0682 /* LaunchScreen.storyboard */,
 				5DB5F1F320CAE6D30027B6DE /* Info.plist */,
 				5DB5F1F420CAE6D30027B6DE /* main.m */,
 			);
@@ -148,6 +148,15 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				ja,
+				es,
+				da,
+				"es-ES",
+				"zh-Hant",
+				fr,
+				de,
+				pt,
 			);
 			mainGroup = 5DB5F1D620CAE6D10027B6DE;
 			productRefGroup = 5DB5F1E020CAE6D10027B6DE /* Products */;

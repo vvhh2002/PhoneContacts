@@ -12,7 +12,6 @@
 
 @interface SearchViewController : UIViewController
 
-
 @end
 
 #endif /* SearchViewController_h */

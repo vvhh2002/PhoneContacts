@@ -7,9 +7,10 @@
 //
 
 #import "SearchViewController.h"
+#import <WebKit/WebKit.h>
 
-@interface SearchViewController ()
-
+@interface SearchViewController ()<UIWebViewDelegate,WKNavigationDelegate>
+@property(assign,nonatomic)UIWebView *webView;
 @end
 
 @implementation SearchViewController
@@ -17,6 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
+    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.baidu.com"]]];
+    [self.view addSubview:webView];
 }
 
 
@@ -24,6 +28,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 
 @end
