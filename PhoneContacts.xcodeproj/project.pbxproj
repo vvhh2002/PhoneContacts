@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		5D29C6D820CC10C000D1CD81 /* APRoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D29C6D720CBFCAA00D1CD81 /* APRoundedButton.m */; };
+		5D328CDD20CE3F0000EE8DBF /* ContactsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D328CDC20CE3F0000EE8DBF /* ContactsTableViewController.m */; };
 		5D81838320CB7A5F0025057B /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D81838220CB7A5F0025057B /* SearchViewController.m */; };
 		5D83708820CB8808000B0682 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D83708720CB8808000B0682 /* Assets.xcassets */; };
 		5D83708B20CB884F000B0682 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D83708920CB884F000B0682 /* Main.storyboard */; };
 		5D83708C20CB884F000B0682 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D83708A20CB884F000B0682 /* LaunchScreen.storyboard */; };
 		5D83709120CB8896000B0682 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D83708D20CB8896000B0682 /* TabBarController.m */; };
-		5D83709220CB8896000B0682 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D83708E20CB8896000B0682 /* NavigationController.m */; };
+		5D83709220CB8896000B0682 /* ContactsNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D83708E20CB8896000B0682 /* ContactsNavigationController.m */; };
 		5DB5F1E420CAE6D10027B6DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB5F1E320CAE6D10027B6DE /* AppDelegate.m */; };
-		5DB5F1E720CAE6D20027B6DE /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB5F1E620CAE6D20027B6DE /* ContactsViewController.m */; };
 		5DB5F1EA20CAE6D20027B6DE /* CallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB5F1E920CAE6D20027B6DE /* CallViewController.m */; };
 		5DB5F1F520CAE6D30027B6DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB5F1F420CAE6D30027B6DE /* main.m */; };
 /* End PBXBuildFile section */
@@ -23,20 +23,22 @@
 /* Begin PBXFileReference section */
 		5D29C6D620CBFC8100D1CD81 /* APRoundedButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APRoundedButton.h; sourceTree = "<group>"; };
 		5D29C6D720CBFCAA00D1CD81 /* APRoundedButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APRoundedButton.m; sourceTree = "<group>"; };
+		5D328CDB20CE3EF400EE8DBF /* ContactsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactsTableViewController.h; sourceTree = "<group>"; };
+		5D328CDC20CE3F0000EE8DBF /* ContactsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactsTableViewController.m; sourceTree = "<group>"; };
 		5D81838220CB7A5F0025057B /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		5D81838420CB7A760025057B /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		5D83708720CB8808000B0682 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D83708920CB884F000B0682 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5D83708A20CB884F000B0682 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D83708D20CB8896000B0682 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
-		5D83708E20CB8896000B0682 /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
-		5D83708F20CB8896000B0682 /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
+		5D83708E20CB8896000B0682 /* ContactsNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsNavigationController.m; sourceTree = "<group>"; };
+		5D83708F20CB8896000B0682 /* ContactsNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsNavigationController.h; sourceTree = "<group>"; };
 		5D83709020CB8896000B0682 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		5DA5DB0620CC2BB000EDB182 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		5DA5DB0820CC2C5400EDB182 /* libtclsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtclsqlite3.dylib; path = ../../../../../../System/Library/Tcl/sqlite3/libtclsqlite3.dylib; sourceTree = "<group>"; };
 		5DB5F1DF20CAE6D10027B6DE /* PhoneContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoneContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DB5F1E220CAE6D10027B6DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5DB5F1E320CAE6D10027B6DE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5DB5F1E520CAE6D20027B6DE /* ContactsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
-		5DB5F1E620CAE6D20027B6DE /* ContactsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
 		5DB5F1E820CAE6D20027B6DE /* CallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CallViewController.h; sourceTree = "<group>"; };
 		5DB5F1E920CAE6D20027B6DE /* CallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CallViewController.m; sourceTree = "<group>"; };
 		5DB5F1F320CAE6D30027B6DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,8 +59,6 @@
 		5D83708520CB8808000B0682 /* BaseViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				5D83708F20CB8896000B0682 /* NavigationController.h */,
-				5D83708E20CB8896000B0682 /* NavigationController.m */,
 				5D83708D20CB8896000B0682 /* TabBarController.m */,
 				5D83709020CB8896000B0682 /* TabBarController.h */,
 			);
@@ -72,11 +72,21 @@
 			path = Base.lproj;
 			sourceTree = "<group>";
 		};
+		5DA5DB0520CC2BB000EDB182 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5DA5DB0820CC2C5400EDB182 /* libtclsqlite3.dylib */,
+				5DA5DB0620CC2BB000EDB182 /* libsqlite3.0.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5DB5F1D620CAE6D10027B6DE = {
 			isa = PBXGroup;
 			children = (
 				5DB5F1E120CAE6D10027B6DE /* PhoneContacts */,
 				5DB5F1E020CAE6D10027B6DE /* Products */,
+				5DA5DB0520CC2BB000EDB182 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,8 +106,10 @@
 				5D83708520CB8808000B0682 /* BaseViewControllers */,
 				5DB5F1E220CAE6D10027B6DE /* AppDelegate.h */,
 				5DB5F1E320CAE6D10027B6DE /* AppDelegate.m */,
-				5DB5F1E520CAE6D20027B6DE /* ContactsViewController.h */,
-				5DB5F1E620CAE6D20027B6DE /* ContactsViewController.m */,
+				5D83708F20CB8896000B0682 /* ContactsNavigationController.h */,
+				5D83708E20CB8896000B0682 /* ContactsNavigationController.m */,
+				5D328CDB20CE3EF400EE8DBF /* ContactsTableViewController.h */,
+				5D328CDC20CE3F0000EE8DBF /* ContactsTableViewController.m */,
 				5DB5F1E820CAE6D20027B6DE /* CallViewController.h */,
 				5DB5F1E920CAE6D20027B6DE /* CallViewController.m */,
 				5D81838420CB7A760025057B /* SearchViewController.h */,
@@ -197,8 +209,8 @@
 				5DB5F1E420CAE6D10027B6DE /* AppDelegate.m in Sources */,
 				5D83709120CB8896000B0682 /* TabBarController.m in Sources */,
 				5DB5F1F520CAE6D30027B6DE /* main.m in Sources */,
-				5DB5F1E720CAE6D20027B6DE /* ContactsViewController.m in Sources */,
-				5D83709220CB8896000B0682 /* NavigationController.m in Sources */,
+				5D328CDD20CE3F0000EE8DBF /* ContactsTableViewController.m in Sources */,
+				5D83709220CB8896000B0682 /* ContactsNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +338,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/Tcl/sqlite3",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-.PhoneContacts";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -342,6 +358,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/Tcl/sqlite3",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-.PhoneContacts";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -1,18 +1,18 @@
 //
-//  NavigationController.m
+//  ContactsTableViewController.m
 //  PhoneContacts
 //
-//  Created by - on 6/9/18.
+//  Created by - on 6/11/18.
 //  Copyright © 2018 liyihan. All rights reserved.
 //
 
-#import "NavigationController.h"
+#import "ContactsTableViewController.h"
 
-@interface NavigationController ()
+@interface ContactsTableViewController ()
 
 @end
 
-@implementation NavigationController
+@implementation ContactsTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

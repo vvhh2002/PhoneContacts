@@ -1,5 +1,5 @@
 //
-//  NavigationController.h
+//  ContactsNavigationController.h
 //  PhoneContacts
 //
 //  Created by - on 6/9/18.
@@ -10,8 +10,8 @@
 #define NavigationController_h
 #import <UIKit/UIKit.h>
 
-@interface NavigationController : UINavigationController
+@interface ContactsNavigationController : UINavigationController
 
 @end
 
-#endif /* NavigationController_h */
+#endif /* ContactsNavigationController_h */
