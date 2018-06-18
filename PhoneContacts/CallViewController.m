@@ -30,5 +30,6 @@
 }
 - (IBAction)enterPressed {
     self.isEntering = NO;
+    //调用系统拨号
 }
 @end

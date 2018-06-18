@@ -10,6 +10,11 @@
 		5D28291B20D7AB3800EF14CF /* CallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D28291A20D7AB3700EF14CF /* CallViewController.m */; };
 		5D29C6D820CC10C000D1CD81 /* APRoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D29C6D720CBFCAA00D1CD81 /* APRoundedButton.m */; };
 		5D328CDD20CE3F0000EE8DBF /* ContactsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D328CDC20CE3F0000EE8DBF /* ContactsTableViewController.m */; };
+		5D59D40420D7D40700CDD36F /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D59D40320D7D40700CDD36F /* Person.m */; };
+		5D59D44320D7F7F100CDD36F /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA5DB0620CC2BB000EDB182 /* libsqlite3.0.tbd */; };
+		5D59D44620D7FE0000CDD36F /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D59D44520D7FE0000CDD36F /* DBManager.m */; };
+		5D59D44B20D82C1F00CDD36F /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D59D44A20D82C1F00CDD36F /* ProfileViewController.m */; };
+		5D59D44D20D83C2D00CDD36F /* contacts.db in Resources */ = {isa = PBXBuildFile; fileRef = 5D59D44C20D83C2D00CDD36F /* contacts.db */; };
 		5D81838320CB7A5F0025057B /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D81838220CB7A5F0025057B /* SearchViewController.m */; };
 		5D83708820CB8808000B0682 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D83708720CB8808000B0682 /* Assets.xcassets */; };
 		5D83708B20CB884F000B0682 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D83708920CB884F000B0682 /* Main.storyboard */; };
@@ -27,6 +32,13 @@
 		5D29C6D720CBFCAA00D1CD81 /* APRoundedButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APRoundedButton.m; sourceTree = "<group>"; };
 		5D328CDB20CE3EF400EE8DBF /* ContactsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactsTableViewController.h; sourceTree = "<group>"; };
 		5D328CDC20CE3F0000EE8DBF /* ContactsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactsTableViewController.m; sourceTree = "<group>"; };
+		5D59D40220D7D3F800CDD36F /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		5D59D40320D7D40700CDD36F /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		5D59D44420D7FDF400CDD36F /* DBManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		5D59D44520D7FE0000CDD36F /* DBManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		5D59D44920D82C1500CDD36F /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		5D59D44A20D82C1F00CDD36F /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		5D59D44C20D83C2D00CDD36F /* contacts.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = contacts.db; sourceTree = "<group>"; };
 		5D81838220CB7A5F0025057B /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		5D81838420CB7A760025057B /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		5D83708720CB8808000B0682 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D59D44320D7F7F100CDD36F /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,15 +114,22 @@
 		5DB5F1E120CAE6D10027B6DE /* PhoneContacts */ = {
 			isa = PBXGroup;
 			children = (
+				5D59D44C20D83C2D00CDD36F /* contacts.db */,
 				5D83708720CB8808000B0682 /* Assets.xcassets */,
 				5D83708620CB8808000B0682 /* Base.lproj */,
 				5D83708520CB8808000B0682 /* BaseViewControllers */,
 				5DB5F1E220CAE6D10027B6DE /* AppDelegate.h */,
 				5DB5F1E320CAE6D10027B6DE /* AppDelegate.m */,
+				5D59D44420D7FDF400CDD36F /* DBManager.h */,
+				5D59D44520D7FE0000CDD36F /* DBManager.m */,
+				5D59D40220D7D3F800CDD36F /* Person.h */,
+				5D59D40320D7D40700CDD36F /* Person.m */,
 				5D83708F20CB8896000B0682 /* ContactsNavigationController.h */,
 				5D83708E20CB8896000B0682 /* ContactsNavigationController.m */,
 				5D328CDB20CE3EF400EE8DBF /* ContactsTableViewController.h */,
 				5D328CDC20CE3F0000EE8DBF /* ContactsTableViewController.m */,
+				5D59D44920D82C1500CDD36F /* ProfileViewController.h */,
+				5D59D44A20D82C1F00CDD36F /* ProfileViewController.m */,
 				5D28291920D7AB2900EF14CF /* CallViewController.h */,
 				5D28291A20D7AB3700EF14CF /* CallViewController.m */,
 				5D81838420CB7A760025057B /* SearchViewController.h */,
@@ -192,6 +212,7 @@
 			files = (
 				5D83708820CB8808000B0682 /* Assets.xcassets in Resources */,
 				5D83708C20CB884F000B0682 /* LaunchScreen.storyboard in Resources */,
+				5D59D44D20D83C2D00CDD36F /* contacts.db in Resources */,
 				5D83708B20CB884F000B0682 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,11 +225,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D81838320CB7A5F0025057B /* SearchViewController.m in Sources */,
+				5D59D44620D7FE0000CDD36F /* DBManager.m in Sources */,
 				5D29C6D820CC10C000D1CD81 /* APRoundedButton.m in Sources */,
 				5DB5F1E420CAE6D10027B6DE /* AppDelegate.m in Sources */,
 				5D83709120CB8896000B0682 /* TabBarController.m in Sources */,
 				5DB5F1F520CAE6D30027B6DE /* main.m in Sources */,
+				5D59D44B20D82C1F00CDD36F /* ProfileViewController.m in Sources */,
 				5D328CDD20CE3F0000EE8DBF /* ContactsTableViewController.m in Sources */,
+				5D59D40420D7D40700CDD36F /* Person.m in Sources */,
 				5D28291B20D7AB3800EF14CF /* CallViewController.m in Sources */,
 				5D83709220CB8896000B0682 /* ContactsNavigationController.m in Sources */,
 			);
