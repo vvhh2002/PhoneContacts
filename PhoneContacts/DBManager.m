@@ -33,14 +33,16 @@
         
         dbManager = [[DBManager alloc]init];
     });
+    printf("getDBConnection succeed");
     return dbManager;
 }
 -(void)openDatabase
 {
     //获取沙盒目录
-     NSString * pathSandBox = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
+//     NSString * pathSandBox = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
+    NSString *pathDB=[[NSBundle mainBundle] pathForResource:@"contacts" ofType:@"db"];
     //数据库名称
-    NSString * pathDB = [pathSandBox stringByAppendingPathComponent:@"contacts.db"];
+//    NSString * pathDB = [pathSandBox stringByAppendingPathComponent:@"contacts.db"];
     //打开数据库
     sqlite3_open([pathDB UTF8String], &database);
 }

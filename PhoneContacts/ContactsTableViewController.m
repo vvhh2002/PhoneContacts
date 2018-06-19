@@ -9,18 +9,21 @@
 #import "ContactsTableViewController.h"
 #import "Person.h"
 #import "DBManager.h"
-@interface ContactsTableViewController ()
+
+@interface ContactsTableViewController ()<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UISearchBar *searchContacts;
+@property (weak, nonatomic) IBOutlet UITableView *listContacts;
 @property(nonatomic,strong)DBManager *dbManager;
 @end
 
 @implementation ContactsTableViewController
-@synthesize dbManager;
+@synthesize dbManager,listContacts,searchContacts;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    printf("ContactsTableView succeed");
     self.dbManager = [DBManager getDBConnection];
-    
 //    //添加导航栏的右按钮，回调方法为 toAddViewController
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(toProfileViewController)];
 //
@@ -29,14 +32,14 @@
 }
 
 // viewWillApear,比如在当前页面即将展现的时候触发的，需要刷新一下列表，比如更新，添加页面，调回的时候，需要刷新一下列表
-
 //页面将要跳回动画结束时
 -(void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:true];
     //重新加载数据库中的所有数据
     [self.dbManager loadAllContacts];
     //刷新列表
-    [self.tableView reloadData];
+    [self.listContacts reloadData];
 }
 ////为添加按钮设置回调方法,只负责跳转一个页面即可
 //#pragma mark - barButton target action
@@ -52,6 +55,33 @@
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
+
+#pragma mark - Table view data source
+/**
+ *  返回组数，分组的情况下，因为不分组，所以返回1
+ *
+ *  @param tableView 当前的tableView
+ *
+ *  @return 组数
+ */
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    return 1;
+}
+/**
+ *  组的行数
+ *
+ *  @param tableView 当前的tableView
+ *  @param section   组的个数
+ *
+ *  @return 返回每部分的行数
+ */
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return self.dbManager.contacts.count;
+    
+}
+
 #pragma mark - Table view data source
 
 /**
@@ -65,13 +95,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     //获取模型
-    Person* person = self.dbManager.contacts[indexPath.row];
+    Person* currentPerson = self.dbManager.contacts[indexPath.row];
     
     //创建表格cell
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [listContacts dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     //[tableView registerClass:[cell class] forCellReuseIdentifier:@"Cell"];
     //简单赋值
-    cell.textLabel.text = person.name;
+    cell.textLabel.text = currentPerson.name;
+    cell.detailTextLabel.text = currentPerson.phone;
     return cell;
 }
 

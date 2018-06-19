@@ -74,6 +74,8 @@
 			children = (
 				5D83708D20CB8896000B0682 /* TabBarController.m */,
 				5D83709020CB8896000B0682 /* TabBarController.h */,
+				5D83708F20CB8896000B0682 /* ContactsNavigationController.h */,
+				5D83708E20CB8896000B0682 /* ContactsNavigationController.m */,
 			);
 			path = BaseViewControllers;
 			sourceTree = "<group>";
@@ -124,8 +126,6 @@
 				5D59D44520D7FE0000CDD36F /* DBManager.m */,
 				5D59D40220D7D3F800CDD36F /* Person.h */,
 				5D59D40320D7D40700CDD36F /* Person.m */,
-				5D83708F20CB8896000B0682 /* ContactsNavigationController.h */,
-				5D83708E20CB8896000B0682 /* ContactsNavigationController.m */,
 				5D328CDB20CE3EF400EE8DBF /* ContactsTableViewController.h */,
 				5D328CDC20CE3F0000EE8DBF /* ContactsTableViewController.m */,
 				5D59D44920D82C1500CDD36F /* ProfileViewController.h */,

@@ -21,6 +21,7 @@
 
 - (IBAction)digitPressed:(UIButton*)sender {
     NSString *digit=[sender currentTitle];
+    printf("digitPressed");
     if(self.isEntering){
         self.display.text = [self.display.text stringByAppendingString:digit];
     }else{
