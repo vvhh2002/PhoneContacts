@@ -26,6 +26,8 @@
     self.dbManager = [DBManager getDBConnection];
 //    //添加导航栏的右按钮，回调方法为 toAddViewController
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(toProfileViewController)];
+    
+    self.automaticallyAdjustsScrollViewInsets = false;
 //
 //    //添加导航栏的左按钮，回调方法为 toSearchViewController
 //    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(toSearchViewController)];
@@ -56,6 +58,7 @@
 }
 
 
+
 #pragma mark - Table view data source
 /**
  *  返回组数，分组的情况下，因为不分组，所以返回1
@@ -65,21 +68,23 @@
  *  @return 组数
  */
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
+
     return 1;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    
+    return 0.001f;
 }
 /**
  *  组的行数
- *
  *  @param tableView 当前的tableView
  *  @param section   组的个数
- *
  *  @return 返回每部分的行数
  */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
+
     return self.dbManager.contacts.count;
-    
+
 }
 
 #pragma mark - Table view data source
