@@ -11,11 +11,6 @@
 #import "Person.h"
 
 @interface ProfileViewController ()
-//@property (weak, nonatomic) IBOutlet UILabel *nameText;
-//@property (weak, nonatomic) IBOutlet UILabel *phoneText;
-//@property (weak, nonatomic) IBOutlet UILabel *wechatText;
-//@property (weak, nonatomic) IBOutlet UILabel *addressText;
-//@property (weak, nonatomic) IBOutlet UILabel *emailText;
 @property (strong, nonatomic) IBOutlet UITextField *nameText;
 @property (strong, nonatomic) IBOutlet UITextField *phoneText;
 @property (strong, nonatomic) IBOutlet UITextField *wechatText;
@@ -56,7 +51,7 @@
 -(void)addOrUpdate
 {
     
-    //初始化humen实例
+    //初始化
     Person* person = [[Person alloc]initWithName:nameText.text phone:phoneText.text wechat:wechatText.text address:addressText.text email:emailText.text];
     
     //表示更新
@@ -73,6 +68,7 @@
     }
     //调回原页面
     [self.navigationController popViewControllerAnimated:YES];
+    
     
 }
 @end

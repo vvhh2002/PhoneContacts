@@ -13,7 +13,7 @@
         <!--List-->
         <scene sceneID="xTU-R8-SoW">
             <objects>
-                <tableViewController title="List" automaticallyAdjustsScrollViewInsets="NO" id="mNy-e7-jHO" customClass="ContactsTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="List" title="List" automaticallyAdjustsScrollViewInsets="NO" id="mNy-e7-jHO" customClass="ContactsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NjH-7L-u7Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +27,7 @@
                             </scopeButtonTitles>
                         </searchBar>
                     </tableView>
-                    <navigationItem key="navigationItem" id="9g5-jy-laF"/>
+                    <navigationItem key="navigationItem" title="Contacts" id="9g5-jy-laF"/>
                     <connections>
                         <outlet property="listContacts" destination="BQq-RH-NYn" id="idZ-oE-iqU"/>
                         <outlet property="searchContacts" destination="3Eu-Rs-COg" id="dYr-Sz-fDJ"/>
@@ -62,10 +62,10 @@
             </objects>
             <point key="canvasLocation" x="400.80000000000001" y="-870.31484257871068"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--Profile-->
         <scene sceneID="5zu-Ee-Pbk">
             <objects>
-                <viewController id="rNe-hF-Eiu" customClass="ProfileViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Profile" title="Profile" id="rNe-hF-Eiu" customClass="ProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zdu-IY-sfY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -144,31 +144,31 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Bi0-2I-ZTA"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ged-ts-YK2"/>
+                    <navigationItem key="navigationItem" title="Contacts" id="ged-ts-YK2"/>
                     <connections>
-                        <outlet property="addressText" destination="6pg-YT-WTa" id="EU2-d2-zXk"/>
-                        <outlet property="emailText" destination="1qh-R2-S98" id="Usd-BA-QzD"/>
-                        <outlet property="nameText" destination="ike-L0-qy9" id="zLG-8g-89n"/>
-                        <outlet property="phoneText" destination="RRq-tm-WWo" id="w9Y-Gc-geF"/>
-                        <outlet property="wechatText" destination="aGk-oN-rLk" id="Sa4-hU-Lob"/>
+                        <outlet property="addressText" destination="6pg-YT-WTa" id="LXa-gm-jrI"/>
+                        <outlet property="emailText" destination="1qh-R2-S98" id="i7o-0B-6It"/>
+                        <outlet property="nameText" destination="ike-L0-qy9" id="PHY-Mj-GP2"/>
+                        <outlet property="phoneText" destination="RRq-tm-WWo" id="hZe-CB-QRA"/>
+                        <outlet property="wechatText" destination="aGk-oN-rLk" id="s7A-uF-VX5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Re3-Uw-fgG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="119" y="-181"/>
         </scene>
-        <!--Contacts-->
+        <!--Contacts Navigation-->
         <scene sceneID="qND-ic-y62">
             <objects>
-                <navigationController id="AOs-Gc-hM4" customClass="ContactsNavigationController" sceneMemberID="viewController">
+                <navigationController title="Contacts Navigation" id="AOs-Gc-hM4" customClass="ContactsNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Contacts" image="contacts" landscapeImage="contacts" largeContentSizeImage="contacts" selectedImage="contacts" id="HUa-Xl-n9w"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3Vi-pM-q2W">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="rNe-hF-Eiu" kind="show" id="8qk-Td-QIG"/>
                         <segue destination="mNy-e7-jHO" kind="relationship" relationship="rootViewController" id="SPb-gD-J8A"/>
+                        <segue destination="rNe-hF-Eiu" kind="show" id="dLm-fo-iku"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UdG-xO-fLC" userLabel="First Responder" sceneMemberID="firstResponder"/>

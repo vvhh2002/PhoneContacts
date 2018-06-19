@@ -20,7 +20,6 @@
     if (self) {
         self.contacts = [NSMutableArray array];
         [self openDatabase];
-        [self createTable];
         [self loadAllContacts];
     }
     return self;
@@ -38,14 +37,35 @@
 }
 -(void)openDatabase
 {
+    NSString *localPathDB=[[NSBundle mainBundle] pathForResource:@"contacts" ofType:@"db"];
+    
     //获取沙盒目录
-//     NSString * pathSandBox = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
-    NSString *pathDB=[[NSBundle mainBundle] pathForResource:@"contacts" ofType:@"db"];
+    NSString * pathSandBox = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
+//    NSString *pathLibrary = [pathSandBox stringByAppendingString:@"/Library"];
     //数据库名称
-//    NSString * pathDB = [pathSandBox stringByAppendingPathComponent:@"contacts.db"];
+    NSString * pathDB = [pathSandBox stringByAppendingPathComponent:@"contacts.db"];
+    [[NSFileManager defaultManager]copyItemAtPath:localPathDB toPath:pathDB error:nil];
+//    BOOL isFilePresent = [self copyMissingFile:localPathDB toPath:pathLibrary];
+//    if(isFilePresent){
+//        NSLog(@"copy succeed");
+//    }else{
+//        NSLog(@"copy fail");
+//    }
+    
     //打开数据库
     sqlite3_open([pathDB UTF8String], &database);
 }
+- (BOOL)copyMissingFile:(NSString *)sourcePath toPath:(NSString *)toPath
+{
+    BOOL retVal = YES; // If the file already exists, we'll return success…
+    NSString * finalLocation = [toPath stringByAppendingPathComponent:[sourcePath lastPathComponent]];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:finalLocation])
+    {
+        retVal = [[NSFileManager defaultManager] copyItemAtPath:sourcePath toPath:finalLocation error:NULL];
+    }
+    return retVal;
+}
+
 -(void)createTable
 {
     //创建表的SQL语句,用C语言的字符串，如果用了NSString,记得转成C语言字符串即可
@@ -71,7 +91,9 @@
         newPerson.ID=sqlite3_column_int(stmt, 0);
         [self.contacts addObject:newPerson];
     }
+    
     sqlite3_finalize(stmt);
+    
 }
 -(void)addPerson:(Person*)newPerson
 {
@@ -86,10 +108,12 @@
     sqlite3_bind_text(stmt, 5, [newPerson.email UTF8String], -1, NULL);
     int rst=sqlite3_step(stmt);
     if(rst == SQLITE_DONE){
+        sqlite3_commit_hook(database, NULL, NULL);
         NSLog(@"insert succeed");
     }
     else
     {
+        sqlite3_rollback_hook(database, NULL, NULL);
         NSLog(@"insert fail.No:%d",rst);
     }
     
@@ -128,10 +152,12 @@
     sqlite3_bind_int(stmt, 6, (int)currentID);
     int rst=sqlite3_step(stmt);
     if(rst == SQLITE_DONE){
+        sqlite3_commit_hook(database, NULL, NULL);
         NSLog(@"update succeed");
     }
     else
     {
+        sqlite3_rollback_hook(database, NULL, NULL);
         NSLog(@"update fail.No:%d",rst);
     }
     sqlite3_finalize(stmt);

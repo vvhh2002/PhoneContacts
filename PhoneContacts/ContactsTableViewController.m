@@ -27,7 +27,6 @@
 //    //添加导航栏的右按钮，回调方法为 toAddViewController
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(toProfileViewController)];
     
-    self.automaticallyAdjustsScrollViewInsets = false;
 //
 //    //添加导航栏的左按钮，回调方法为 toSearchViewController
 //    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(toSearchViewController)];
@@ -51,10 +50,12 @@
     UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
 
     //根据storyboard创建控制对象
-    UIViewController * viewController = [storyboard instantiateViewControllerWithIdentifier:@"ProfileViewController"];
+    UIViewController * viewController = [storyboard instantiateViewControllerWithIdentifier:@"Profile"];
 
     //跳转界面
     [self.navigationController pushViewController:viewController animated:YES];
+
+
 }
 
 
@@ -126,7 +127,7 @@
     UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     
     //获得跳转的ViewController
-    UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"ProfileViewController"];
+    UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"Profile"];
     
     //KVC赋值
     [vc setValue:person forKey:@"person"];
