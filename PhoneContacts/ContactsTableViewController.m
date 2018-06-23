@@ -54,6 +54,7 @@
     //重新加载数据库中的所有数据
     [self.dbManager loadAllContacts];
     //刷新列表
+    [self.tableView reloadData];
     [self.listContacts reloadData];
 }
 ////为添加按钮设置回调方法,只负责跳转一个页面即可
@@ -72,8 +73,6 @@
 
 }
 
-
-
 #pragma mark - Table view data source
 /**
  *  返回组数，分组的情况下，因为不分组，所以返回1
@@ -90,7 +89,6 @@
     
     return 0.001f;
 }
-
 
 #pragma mark - Table view data source
 
@@ -111,6 +109,9 @@
     //创建表格cell
     UITableViewCell *cell = [listContacts dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     //[tableView registerClass:[cell class] forCellReuseIdentifier:@"Cell"];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+    }
     //简单赋值
     if (tableView == self.tableView) {
         cell.textLabel.text = currentPerson.name;
@@ -200,7 +201,7 @@
         return self.dbManager.contacts.count;
     }else{
         // 谓词搜索
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self contains [cd] %@",searchDisplayController.searchBar.text];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self contains [cd] %@",searchDisplayController.searchBar.text];
         filtered =  [[NSMutableArray alloc] initWithArray:[dbManager.contacts filteredArrayUsingPredicate:predicate]];
         return filtered.count;
     }
