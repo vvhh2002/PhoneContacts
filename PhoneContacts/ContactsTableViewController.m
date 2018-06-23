@@ -11,13 +11,15 @@
 #import "DBManager.h"
 
 @interface ContactsTableViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UISearchBar *searchContacts;
+//@property (weak, nonatomic) IBOutlet UISearchBar *searchContacts;
 @property (weak, nonatomic) IBOutlet UITableView *listContacts;
 @property(nonatomic,strong)DBManager *dbManager;
+@property (nonatomic,strong) UISearchDisplayController *searchDisplayController;
+@property (nonatomic,retain)NSMutableArray *filtered;
 @end
 
 @implementation ContactsTableViewController
-@synthesize dbManager,listContacts,searchContacts;
+@synthesize dbManager,listContacts,filtered,searchDisplayController;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,8 +29,20 @@
 //    //添加导航栏的右按钮，回调方法为 toAddViewController
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(toProfileViewController)];
     
+    //搜索功能
+    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
+    // 添加 searchbar 到 headerview
+    self.tableView.tableHeaderView = searchBar;
+    // 用 searchbar 初始化 SearchDisplayController
+    // 并把 searchDisplayController 和当前 controller 关联起来
+    searchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self];
+//    // searchResultsDataSource 就是 UITableViewDataSource
+//    searchDisplayController.searchResultsDataSource = self;
+//    // searchResultsDelegate 就是 UITableViewDelegate
+//    searchDisplayController.searchResultsDelegate = self;
 //
-//    //添加导航栏的左按钮，回调方法为 toSearchViewController
+
+    //添加导航栏的左按钮，回调方法为 toSearchViewController
 //    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(toSearchViewController)];
 }
 
@@ -76,17 +90,7 @@
     
     return 0.001f;
 }
-/**
- *  组的行数
- *  @param tableView 当前的tableView
- *  @param section   组的个数
- *  @return 返回每部分的行数
- */
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return self.dbManager.contacts.count;
-
-}
 
 #pragma mark - Table view data source
 
@@ -102,13 +106,18 @@
     
     //获取模型
     Person* currentPerson = self.dbManager.contacts[indexPath.row];
+    Person* filteredPerson = filtered[indexPath.row];
     
     //创建表格cell
     UITableViewCell *cell = [listContacts dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     //[tableView registerClass:[cell class] forCellReuseIdentifier:@"Cell"];
     //简单赋值
-    cell.textLabel.text = currentPerson.name;
-    cell.detailTextLabel.text = currentPerson.phone;
+    if (tableView == self.tableView) {
+        cell.textLabel.text = currentPerson.name;
+    }else{
+        cell.textLabel.text = filteredPerson.name;
+    }
+    
     return cell;
 }
 
@@ -167,8 +176,35 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }
 }
-    
 
+
+/**
+ *  组的行数
+ *  @param tableView 当前的tableView
+ *  @param section   组的个数
+ *  @return 返回每部分的行数
+ */
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//
+//    return self.dbManager.contacts.count;
+//
+//}
+
+/*
+ * 如果原 TableView 和 SearchDisplayController 中的 TableView 的 delete 指向同一个对象
+ * 需要在回调中区分出当前是哪个 TableView
+ */
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (tableView == self.tableView) {
+        return self.dbManager.contacts.count;
+    }else{
+        // 谓词搜索
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self contains [cd] %@",searchDisplayController.searchBar.text];
+        filtered =  [[NSMutableArray alloc] initWithArray:[dbManager.contacts filteredArrayUsingPredicate:predicate]];
+        return filtered.count;
+    }
+}
 
 
 @end

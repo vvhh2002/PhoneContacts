@@ -18,19 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="3Eu-Rs-COg">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <scopeButtonTitles>
-                                <string>Title</string>
-                            </scopeButtonTitles>
-                        </searchBar>
                     </tableView>
                     <navigationItem key="navigationItem" title="Contacts" id="9g5-jy-laF"/>
                     <connections>
                         <outlet property="listContacts" destination="BQq-RH-NYn" id="idZ-oE-iqU"/>
-                        <outlet property="searchContacts" destination="3Eu-Rs-COg" id="dYr-Sz-fDJ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IxY-fO-gxv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -58,7 +49,6 @@
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="PkA-m1-Y5g"/>
                 </view>
-                <searchDisplayController id="mkB-b7-Uig"/>
             </objects>
             <point key="canvasLocation" x="400.80000000000001" y="-870.31484257871068"/>
         </scene>
