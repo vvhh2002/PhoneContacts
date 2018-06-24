@@ -37,7 +37,14 @@
     [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
 }
 
-
+- (IBAction)deletePressed
+{
+    if([self.display.text length] > 0){
+        self.display.text = [self.display.text substringToIndex:([self.display.text length]-1)];// 去掉最后一个","
+    }else{
+        self.btnDelete.hidden=YES;
+    }
+}
 
 
 @end

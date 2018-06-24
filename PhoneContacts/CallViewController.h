@@ -18,6 +18,8 @@
 
 - (IBAction)enterPressed;
 
+- (IBAction)deletePressed;
+
 @end
 
 
