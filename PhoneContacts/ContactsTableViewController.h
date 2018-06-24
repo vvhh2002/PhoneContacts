@@ -10,7 +10,7 @@
 #define ContactsTableViewController_h
 #import <UIKit/UIKit.h>
 
-@interface ContactsTableViewController : UITableViewController
+@interface ContactsTableViewController : UITableViewController<UISearchResultsUpdating, UISearchControllerDelegate>
 
 
 

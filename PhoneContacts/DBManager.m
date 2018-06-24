@@ -78,7 +78,7 @@
 -(void)loadAllContacts
 {
     [self.contacts removeAllObjects];
-    const char *sql = "SELECT * FROM person ORDER BY id";
+    const char *sql = "SELECT * FROM person ORDER BY name";//首字母排序
     sqlite3_stmt * stmt;
     sqlite3_prepare_v2(database, sql, -1, &stmt, NULL);
     while(sqlite3_step(stmt)==SQLITE_ROW)
@@ -164,7 +164,21 @@
 }
 -(void)searchPerson:(NSString *)searchKeyword
 {
+    //可变数组存储符合条件的对象
+    NSMutableArray * filtered = [NSMutableArray array];
     
+    //只需在数组中查询即可，不需要在执行数据库
+    for (Person *person in self.contacts)
+    {
+        if ([person.name isEqualToString:searchKeyword])
+        {
+            //添加到数组
+            [filtered addObject:person];
+        }
+    }
+    
+    //改变当前的数组
+    self.contacts = filtered;
 }
 -(void)closeDatabase
 {

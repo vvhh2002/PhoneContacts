@@ -47,6 +47,23 @@
     {
         self.navigationItem.title = @"New Contact";
     }
+    UIToolbar * topView = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 30)];
+    [topView setBarStyle:UIBarStyleDefault];
+    UIBarButtonItem * btnSpace = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
+    btn.frame = CGRectMake(2, 5, 50, 25);
+    [btn addTarget:self action:@selector(dismissKeyBoard) forControlEvents:UIControlEventTouchUpInside];
+    [btn setTitle:@"Done"forState:UIControlStateNormal];
+    
+    UIBarButtonItem *doneBtn = [[UIBarButtonItem alloc]initWithCustomView:btn];
+    NSArray * buttonsArray = [NSArray   arrayWithObjects:btnSpace,doneBtn,nil];
+    [topView setItems:buttonsArray];
+    [nameText setInputAccessoryView:topView];
+    [phoneText setInputAccessoryView:topView];
+    [wechatText setInputAccessoryView:topView];
+    [addressText setInputAccessoryView:topView];
+    [emailText setInputAccessoryView:topView];
+
 }
 -(void)addOrUpdate
 {
@@ -68,7 +85,16 @@
     }
     //调回原页面
     [self.navigationController popViewControllerAnimated:YES];
-    
-    
 }
+//收起键盘
+-(void)dismissKeyBoard
+{
+    [nameText resignFirstResponder];
+    [phoneText resignFirstResponder];
+    [wechatText resignFirstResponder];
+    [addressText resignFirstResponder];
+    [emailText resignFirstResponder];
+}
+
+
 @end
