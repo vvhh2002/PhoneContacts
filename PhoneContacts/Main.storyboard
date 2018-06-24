@@ -522,6 +522,15 @@
                                     <action selector="enterPressed" destination="XxZ-RC-ScX" eventType="touchUpInside" id="VLa-eJ-HuE"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCG-26-dXH">
+                                <rect key="frame" x="69" y="549" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hA3-Cj-Fn4">
+                                <rect key="frame" x="279" y="549" width="27" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="delete"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="8HD-Z2-6Iv"/>
@@ -529,18 +538,21 @@
                     <tabBarItem key="tabBarItem" title="Call" image="call" landscapeImage="call" largeContentSizeImage="call" selectedImage="call" id="2Yd-TH-gSW"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="btnContacts" destination="wCG-26-dXH" id="afx-g5-t1A"/>
+                        <outlet property="btnDelete" destination="hA3-Cj-Fn4" id="UO8-hN-hKV"/>
                         <outlet property="display" destination="TXb-L7-rc0" id="PcA-6M-boO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nat-UH-lqW" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-383" y="539"/>
+            <point key="canvasLocation" x="-383.19999999999999" y="538.38080959520244"/>
         </scene>
     </scenes>
     <resources>
         <image name="call" width="32" height="32"/>
         <image name="callicon" width="48" height="48"/>
         <image name="contacts" width="32" height="32"/>
+        <image name="delete" width="21" height="16"/>
         <image name="search" width="32" height="32"/>
     </resources>
 </document>
