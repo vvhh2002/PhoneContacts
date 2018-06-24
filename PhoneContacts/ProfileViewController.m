@@ -66,22 +66,33 @@
 
 -(void)addOrUpdate
 {
-    //初始化
-    Person* person = [[Person alloc]initWithName:nameText.text phone:phoneText.text wechat:wechatText.text address:addressText.text email:emailText.text];
-    //表示更新
-    if (self.person)
+    if(self.nameText.text.length==0)
     {
-        //更新到数据库
-        [self.dbManager updatePerson:person withIndex:self.index.row + 1];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Please fill in Name!" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){}];
+        
+        [alert addAction:okAction];
+        [self presentViewController:alert animated:YES completion:nil];
     }
-    //表示添加
-    else
-    {
-        //添加到数据库sqlite
-        [self.dbManager addPerson:person];
+    else{
+        //初始化
+        Person* person = [[Person alloc]initWithName:nameText.text phone:phoneText.text wechat:wechatText.text address:addressText.text email:emailText.text];
+        //表示更新
+        if (self.person)
+        {
+            //更新到数据库
+            [self.dbManager updatePerson:person withIndex:self.index.row + 1];
+        }
+        //表示添加
+        else
+        {
+            //添加到数据库sqlite
+            [self.dbManager addPerson:person];
+        }
+        //调回原页面
+        [self.navigationController popViewControllerAnimated:YES];
     }
-    //调回原页面
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 //收起键盘

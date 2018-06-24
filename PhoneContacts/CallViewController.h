@@ -17,6 +17,7 @@
 - (IBAction)digitPressed:(id)sender;
 - (IBAction)enterPressed;
 - (IBAction)deletePressed;
+- (IBAction)addPressed;
 
 @end
 
