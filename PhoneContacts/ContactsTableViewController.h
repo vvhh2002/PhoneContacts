@@ -12,9 +12,6 @@
 
 @interface ContactsTableViewController : UITableViewController<UISearchResultsUpdating, UISearchControllerDelegate>
 
-
-
 @end
-
 
 #endif /* ContactsTableViewController_h */

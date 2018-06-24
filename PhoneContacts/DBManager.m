@@ -14,6 +14,7 @@
 
 @implementation DBManager
 @synthesize contacts,database;
+
 - (instancetype)init
 {
     self = [super init];
@@ -24,6 +25,7 @@
     }
     return self;
 }
+
 +(instancetype)getDBConnection
 {
     static DBManager* dbManager=nil;
@@ -35,46 +37,27 @@
     printf("getDBConnection succeed");
     return dbManager;
 }
+
 -(void)openDatabase
 {
     NSString *localPathDB=[[NSBundle mainBundle] pathForResource:@"contacts" ofType:@"db"];
-    
     //获取沙盒目录
     NSString * pathSandBox = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
-//    NSString *pathLibrary = [pathSandBox stringByAppendingString:@"/Library"];
     //数据库名称
     NSString * pathDB = [pathSandBox stringByAppendingPathComponent:@"contacts.db"];
     [[NSFileManager defaultManager]copyItemAtPath:localPathDB toPath:pathDB error:nil];
-//    BOOL isFilePresent = [self copyMissingFile:localPathDB toPath:pathLibrary];
-//    if(isFilePresent){
-//        NSLog(@"copy succeed");
-//    }else{
-//        NSLog(@"copy fail");
-//    }
-    
     //打开数据库
     sqlite3_open([pathDB UTF8String], &database);
-}
-- (BOOL)copyMissingFile:(NSString *)sourcePath toPath:(NSString *)toPath
-{
-    BOOL retVal = YES; // If the file already exists, we'll return success…
-    NSString * finalLocation = [toPath stringByAppendingPathComponent:[sourcePath lastPathComponent]];
-    if (![[NSFileManager defaultManager] fileExistsAtPath:finalLocation])
-    {
-        retVal = [[NSFileManager defaultManager] copyItemAtPath:sourcePath toPath:finalLocation error:NULL];
-    }
-    return retVal;
 }
 
 -(void)createTable
 {
     //创建表的SQL语句,用C语言的字符串，如果用了NSString,记得转成C语言字符串即可
     const char * createTableSQL = "create table if not exists person(id integer primary key autoincrement not null,name text,phone text,wechat text,address text,email text)";
-    
     //执行,第一个参数是sqlite3对象指针，第二个是C语言类型的SQL语句，后面3个参数填NULL即可
     sqlite3_exec(database, createTableSQL, NULL, NULL, NULL);
-    
 }
+
 -(void)loadAllContacts
 {
     [self.contacts removeAllObjects];
@@ -91,10 +74,9 @@
         newPerson.ID=sqlite3_column_int(stmt, 0);
         [self.contacts addObject:newPerson];
     }
-    
     sqlite3_finalize(stmt);
-    
 }
+
 -(void)addPerson:(Person*)newPerson
 {
     [self.contacts addObject:newPerson];
@@ -116,9 +98,9 @@
         sqlite3_rollback_hook(database, NULL, NULL);
         NSLog(@"insert fail.No:%d",rst);
     }
-    
     sqlite3_finalize(stmt);
 }
+
 -(void)deletePerson:(NSInteger)index
 {
     NSInteger currentID = ((Person*)self.contacts[index-1]).ID;
@@ -137,6 +119,7 @@
     }
     sqlite3_finalize(stmt);
 }
+
 -(void)updatePerson:(Person*)updatedPerson withIndex:(NSInteger)index
 {
     NSInteger currentID = ((Person*)self.contacts[index-1]).ID;
@@ -167,8 +150,10 @@
 {
     sqlite3_close(database);
 }
+
 -(void)dealloc
 {
     [self closeDatabase];
 }
+
 @end

@@ -11,25 +11,24 @@
 
 @interface CallViewController()
 @property(nonatomic) BOOL isEntering;
-@property (strong, nonatomic) IBOutlet UIButton *btnContacts;
 @property (strong, nonatomic) IBOutlet UIButton *btnDelete;
 @end
-@implementation CallViewController
 
-@synthesize display,isEntering,btnContacts,btnDelete;
+@implementation CallViewController
+@synthesize display,isEntering,btnDelete;
 
 - (IBAction)digitPressed:(UIButton*)sender {
     NSString *digit=[sender currentTitle];
     printf("digitPressed");
     if(self.isEntering){
         self.display.text = [self.display.text stringByAppendingString:digit];
-        self.btnContacts.hidden=NO;
         self.btnDelete.hidden=NO;
     }else{
         self.display.text=digit;
         self.isEntering=YES;
     }
 }
+
 - (IBAction)enterPressed {
     self.isEntering = NO;
     //调用系统拨号
@@ -45,6 +44,5 @@
         self.btnDelete.hidden=YES;
     }
 }
-
 
 @end

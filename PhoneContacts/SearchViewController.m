@@ -7,12 +7,10 @@
 //
 
 #import "SearchViewController.h"
-
 #import <WebKit/WebKit.h>
 
 @interface SearchViewController ()<WKNavigationDelegate,WKUIDelegate>
 @property (nonatomic,strong) WKWebView *webView;
-//@interface SearchViewController ()
 @end
 
 @implementation SearchViewController
@@ -24,16 +22,11 @@
 //    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.google.com"]]];
     [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://m.baidu.com/?pu=sz%401321_000"]]];
     [self.view addSubview:webView];
-
-    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-
 
 @end

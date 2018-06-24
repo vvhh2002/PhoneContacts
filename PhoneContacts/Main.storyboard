@@ -522,10 +522,6 @@
                                     <action selector="enterPressed" destination="XxZ-RC-ScX" eventType="touchUpInside" id="VLa-eJ-HuE"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCG-26-dXH">
-                                <rect key="frame" x="69" y="549" width="22" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hA3-Cj-Fn4">
                                 <rect key="frame" x="279" y="549" width="27" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -541,7 +537,6 @@
                     <tabBarItem key="tabBarItem" title="Call" image="call" landscapeImage="call" largeContentSizeImage="call" selectedImage="call" id="2Yd-TH-gSW"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="btnContacts" destination="wCG-26-dXH" id="afx-g5-t1A"/>
                         <outlet property="btnDelete" destination="hA3-Cj-Fn4" id="UO8-hN-hKV"/>
                         <outlet property="display" destination="TXb-L7-rc0" id="PcA-6M-boO"/>
                     </connections>

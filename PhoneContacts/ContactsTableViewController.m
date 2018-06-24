@@ -11,10 +11,8 @@
 #import "DBManager.h"
 
 @interface ContactsTableViewController ()<UITableViewDelegate,UITableViewDataSource>
-//@property (weak, nonatomic) IBOutlet UISearchBar *searchContacts;
 @property (weak, nonatomic) IBOutlet UITableView *listContacts;
 @property(nonatomic,strong)DBManager *dbManager;
-//@property (nonatomic,strong) UISearchDisplayController *searchDisplayController;
 @property (readwrite,copy)NSMutableArray *filtered;
 @property (nonatomic, copy) NSString *filterString;
 @property (nonatomic, strong) UISearchController *searchController;
@@ -30,7 +28,6 @@
     self.dbManager = [DBManager getDBConnection];
 //    //添加导航栏的右按钮，回调方法为 toAddViewController
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(toProfileViewController)];
-    
     // 创建搜索控制器
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
     // 搜索框输入时  更新列表
@@ -58,8 +55,9 @@
     [self.listContacts reloadData];
     [self.tableView reloadData];
 }
-////为添加按钮设置回调方法,只负责跳转一个页面即可
-//#pragma mark - barButton target action
+
+//为添加按钮设置回调方法,只负责跳转一个页面即可
+#pragma mark - barButton target action
 -(void)toProfileViewController
 {
     //获取storyboard
@@ -73,15 +71,14 @@
 #pragma mark - Table view data source
 /**
  *  返回组数，分组的情况下，因为不分组，所以返回1
- *
  *  @param tableView 当前的tableView
- *
  *  @return 组数
  */
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
     return 1;
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     
     return 0.001f;
@@ -91,18 +88,14 @@
 
 /**
  *  cell显示的内容
- *
  *  @param tableView 当前的tableView
  *  @param indexPath 当前的位置
- *
  *  @return 打包好的cell
  */
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    //获取模型
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
 //    Person* currentPerson = self.dbManager.contacts[indexPath.row];
     Person* filteredPerson = filtered[indexPath.row];
-    
     //创建表格cell
     UITableViewCell *cell = [listContacts dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     //[tableView registerClass:[cell class] forCellReuseIdentifier:@"Cell"];
@@ -115,7 +108,6 @@
 
 /**
  *  点击行的时候
- *
  *  @param tableView 当前的tableView
  *  @param indexPath 当前的位置
  */
@@ -133,12 +125,11 @@
     //跳转
     [self.navigationController pushViewController:vc animated:YES];
 }
+
 /**
  *  列表视图能够编辑
- *
  *  @param tableView 当前的tableView
  *  @param indexPath 当前的位置
- *
  *  @return YES表示可以编辑  NO表示不可以编辑
  */
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -151,7 +142,6 @@
 
 /**
  *  当前的编辑模式进行相应的操作
- *
  *  @param tableView    当前的tableView
  *  @param editingStyle 编辑的风格
  *  @param indexPath    当前的位置
@@ -175,7 +165,6 @@
  */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
     return self.filtered.count;
 }
 
@@ -199,6 +188,7 @@
     }
     self.filterString = searchController.searchBar.text;
 }
+
 #pragma mark --- 设置searchController 代理方法
 // 将要返回
 - (void)willDismissSearchController:(UISearchController *)searchController
@@ -207,8 +197,6 @@
     self.filtered = self.dbManager.contacts;
     [self.tableView reloadData];
 }
-
-
 
 @end
 

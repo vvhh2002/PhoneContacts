@@ -26,6 +26,4 @@
 -(void)loadAllContacts;
 
 @end
-
-
 #endif /* DBManager_h */

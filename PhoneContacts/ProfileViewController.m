@@ -42,7 +42,6 @@
         self.addressText.text = self.person.address;
         self.emailText.text = self.person.email;
     }
-    
     else
     {
         self.navigationItem.title = @"New Contact";
@@ -63,14 +62,12 @@
     [wechatText setInputAccessoryView:topView];
     [addressText setInputAccessoryView:topView];
     [emailText setInputAccessoryView:topView];
-
 }
+
 -(void)addOrUpdate
 {
-    
     //初始化
     Person* person = [[Person alloc]initWithName:nameText.text phone:phoneText.text wechat:wechatText.text address:addressText.text email:emailText.text];
-    
     //表示更新
     if (self.person)
     {
@@ -86,6 +83,7 @@
     //调回原页面
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 //收起键盘
 -(void)dismissKeyBoard
 {
@@ -95,17 +93,18 @@
     [addressText resignFirstResponder];
     [emailText resignFirstResponder];
 }
+
 - (IBAction)sharePressed:(id)sender
 {
     NSArray *contact = @[nameText.text,phoneText.text,wechatText.text,addressText.text,emailText.text];
     UIActivityViewController *activityController=[[UIActivityViewController alloc]initWithActivityItems:contact applicationActivities:nil];
     [self.navigationController presentViewController:activityController animated:YES completion:nil];
 }
+
 - (IBAction)callPressed
 {
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",phoneText.text]];
     [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
 }
-
 
 @end

@@ -15,13 +15,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *display;
 
 - (IBAction)digitPressed:(id)sender;
-
 - (IBAction)enterPressed;
-
 - (IBAction)deletePressed;
 
 @end
-
-
 
 #endif /* CallViewController_h */
