@@ -19,11 +19,9 @@
 }
 @property (nonatomic,retain)NSMutableArray *contacts;
 
-
 -(void)addPerson:(Person*)newPerson;
 -(void)updatePerson:(Person*)updatedPerson withIndex:(NSInteger)index;
 -(void)deletePerson:(NSInteger)index;
--(void)searchPerson:(NSString*)searchKeyword;
 +(instancetype)getDBConnection;
 -(void)loadAllContacts;
 

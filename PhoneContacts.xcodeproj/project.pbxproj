@@ -18,11 +18,11 @@
 		5D81838320CB7A5F0025057B /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D81838220CB7A5F0025057B /* SearchViewController.m */; };
 		5D83708820CB8808000B0682 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D83708720CB8808000B0682 /* Assets.xcassets */; };
 		5D83708B20CB884F000B0682 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D83708920CB884F000B0682 /* Main.storyboard */; };
-		5D83708C20CB884F000B0682 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D83708A20CB884F000B0682 /* LaunchScreen.storyboard */; };
 		5D83709120CB8896000B0682 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D83708D20CB8896000B0682 /* TabBarController.m */; };
 		5D83709220CB8896000B0682 /* ContactsNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D83708E20CB8896000B0682 /* ContactsNavigationController.m */; };
 		5DB5F1E420CAE6D10027B6DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB5F1E320CAE6D10027B6DE /* AppDelegate.m */; };
 		5DB5F1F520CAE6D30027B6DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB5F1F420CAE6D30027B6DE /* main.m */; };
+		5DCB131120DF3A2E00A6571E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB131020DF3A2E00A6571E /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +43,6 @@
 		5D81838420CB7A760025057B /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		5D83708720CB8808000B0682 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D83708920CB884F000B0682 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		5D83708A20CB884F000B0682 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D83708D20CB8896000B0682 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		5D83708E20CB8896000B0682 /* ContactsNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsNavigationController.m; sourceTree = "<group>"; };
 		5D83708F20CB8896000B0682 /* ContactsNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsNavigationController.h; sourceTree = "<group>"; };
@@ -55,6 +54,7 @@
 		5DB5F1E320CAE6D10027B6DE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5DB5F1F320CAE6D30027B6DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DB5F1F420CAE6D30027B6DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5DCB131020DF3A2E00A6571E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +135,7 @@
 				5D81838420CB7A760025057B /* SearchViewController.h */,
 				5D81838220CB7A5F0025057B /* SearchViewController.m */,
 				5D83708920CB884F000B0682 /* Main.storyboard */,
-				5D83708A20CB884F000B0682 /* LaunchScreen.storyboard */,
+				5DCB131020DF3A2E00A6571E /* LaunchScreen.storyboard */,
 				5DB5F1F320CAE6D30027B6DE /* Info.plist */,
 				5DB5F1F420CAE6D30027B6DE /* main.m */,
 				5D29C6D620CBFC8100D1CD81 /* APRoundedButton.h */,
@@ -211,7 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D83708820CB8808000B0682 /* Assets.xcassets in Resources */,
-				5D83708C20CB884F000B0682 /* LaunchScreen.storyboard in Resources */,
+				5DCB131120DF3A2E00A6571E /* LaunchScreen.storyboard in Resources */,
 				5D59D44D20D83C2D00CDD36F /* contacts.db in Resources */,
 				5D83708B20CB884F000B0682 /* Main.storyboard in Resources */,
 			);

@@ -32,5 +32,9 @@
 - (IBAction)enterPressed {
     self.isEntering = NO;
     //调用系统拨号
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",self.display.text]];
+    [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
 }
+
+
 @end
