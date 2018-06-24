@@ -95,6 +95,11 @@
     [addressText resignFirstResponder];
     [emailText resignFirstResponder];
 }
-
+- (IBAction)share:(id)sender
+{
+    NSArray *contact = @[nameText.text,phoneText.text,wechatText.text,addressText.text,emailText.text];
+    UIActivityViewController *activityController=[[UIActivityViewController alloc]initWithActivityItems:contact applicationActivities:nil];
+    [self.navigationController presentViewController:activityController animated:YES completion:nil];
+}
 
 @end
