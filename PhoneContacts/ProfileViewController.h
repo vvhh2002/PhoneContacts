@@ -9,12 +9,12 @@
 #ifndef ProfileViewController_h
 #define ProfileViewController_h
 #import <UIKit/UIKit.h>
-#import <Social/Social.h>
+
 
 @interface ProfileViewController : UIViewController
 
-- (IBAction)sharePressed:(id)sender;
 - (IBAction)callPressed;
+- (IBAction)sharePressed:(id)sender;
 
 @end
 

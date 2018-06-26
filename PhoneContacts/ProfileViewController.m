@@ -9,6 +9,7 @@
 #import "ProfileViewController.h"
 #import "DBManager.h"
 #import "Person.h"
+#import <Social/Social.h>
 
 @interface ProfileViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *nameText;
@@ -104,6 +105,7 @@
     [addressText resignFirstResponder];
     [emailText resignFirstResponder];
 }
+
 
 - (IBAction)sharePressed:(id)sender
 {
