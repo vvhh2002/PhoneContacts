@@ -9,6 +9,7 @@
 
 #import "CallViewController.h"
 #import "DBManager.h"
+#import "Person.h"
 
 @interface CallViewController()
 @property(nonatomic) BOOL isEntering;
@@ -57,7 +58,7 @@
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Create New Contact"
                                                                    message:@""
                                                             preferredStyle:UIAlertControllerStyleAlert];
-    
+
     UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
                                                      handler:^(UIAlertAction * action) {
     //响应事件
@@ -67,9 +68,9 @@
                                                          }
                                                          else{
                                                              UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Please fill in Name!" preferredStyle:UIAlertControllerStyleAlert];
-                                                             
+
                                                              UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){}];
-                                                             
+
                                                              [alert addAction:okAction];
                                                              [self presentViewController:alert animated:YES completion:nil];
                                                          }
@@ -81,16 +82,16 @@
                                                          }];
     [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
         textField.placeholder = @"Name";
-        
+
     }];
     [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
         textField.text=self.display.text;
         textField.placeholder = @"Number";
     }];
-    
+
     [alert addAction:okAction];
     [alert addAction:cancelAction];
-    [self presentViewController:alert animated:YES completion:nil];  
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 @end

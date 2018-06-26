@@ -123,7 +123,9 @@
     [vc setValue:person forKey:@"person"];
     [vc setValue:indexPath forKey:@"index"];
     //跳转
+    [self.searchController setActive:NO];
     [self.navigationController pushViewController:vc animated:YES];
+
 }
 
 /**
