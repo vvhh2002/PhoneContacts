@@ -33,7 +33,9 @@
     {
       "idiom" : "iphone",
       "size" : "60x60",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "icon.png"
+
     },
     {
       "idiom" : "iphone",
