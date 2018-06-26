@@ -114,7 +114,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //获取当前的模型
-    Person* person = self.dbManager.contacts[indexPath.row];
+    Person* person = self.filtered[indexPath.row];
     //获得当前的storyboard
     UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     //获得跳转的ViewController
@@ -175,7 +175,7 @@
     if (!filterString || filterString.length <= 0) {
         self.filtered = self.dbManager.contacts;
     } else {
-        NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"name CONTAINS %@", filterString];
+        NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"name CONTAINS[cd] %@", filterString];
         filtered =  [[NSMutableArray alloc] initWithArray:dbManager.contacts];
         filtered = [[filtered filteredArrayUsingPredicate:filterPredicate] copy];
     }
